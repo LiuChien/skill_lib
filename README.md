@@ -19,10 +19,11 @@ env = SkillWrapper(env, SKILLS)
 ```python
 # demo code for AtariPolicyManager in manager.py
 from env_wrapper import SkillWrapper
+from manager import AtariPolicyManager
 import gym
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv
-from stable_baselines import PPO2
+from stable_baselines import TRPO
 ...
 env = gym.make("Alien-ram-v0")
 atari_manager = AtariPolicyManager(env=env, model=TRPO, policy=MlpPolicy, save_path = "/path/to/store/location", verbose=1)
